@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: argocd
+spec:
+  destination:
+    namespace: gb
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      valueFiles:
+      - values.yaml
+    path: .
+    repoURL: https://github.com/mariogelo/guestbook.git
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - PruneLast=true
+
