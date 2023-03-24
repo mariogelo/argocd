@@ -9,7 +9,7 @@ server:
   volumeMounts:
   - mountPath: /shared/app/custom
     name: styles
-configs:
+config:
   styles: |-
     body{
       background: black;
