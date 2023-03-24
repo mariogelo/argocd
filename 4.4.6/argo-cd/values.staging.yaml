@@ -1,6 +1,5 @@
 server:
   config:
-    ui.css.url: ./custom/my-styles.css
     url: https://argocd.test.net
   volumes:
   - configMap:
