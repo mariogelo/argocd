@@ -1,0 +1,20 @@
+server:
+  config:
+    ui.css.url: ./custom/my-styles.css
+    url: https://argocd.test.net
+  volumes:
+  - configMap:
+      defaultMode: 420
+      name: argocd-styles-cm
+    name: styles
+  volumeMounts:
+  - mountPath: /shared/app/custom
+    name: styles
+configs:
+  styles: |-
+    body{
+      background: black;
+    }
+    .top-bar{
+      background: #232222;
+    }
